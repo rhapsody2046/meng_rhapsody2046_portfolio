@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F7F4EE;
+  --bg-elevated: #FFFFFF;
+  --surface: #FFFFFF;
+  --border: #E3DED2;
+  --text: #17140F;
+  --text-muted: #5B564C;
+  --text-faint: #9A9385;
+  --accent-moss: #4B5B41;
+  --accent-clay: #A85A34;
+}
+
+.dark {
+  --bg: #14130F;
+  --bg-elevated: #1B1912;
+  --surface: #1F1D16;
+  --border: #322F24;
+  --text: #F3EFE4;
+  --text-muted: #B4AC99;
+  --text-faint: #756E5D;
+  --accent-moss: #9BB489;
+  --accent-clay: #D98A5C;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+::selection {
+  background-color: var(--accent-moss);
+  color: #F7F4EE;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.hairline {
+  height: 1px;
+  width: 100%;
+  background: var(--border);
+}
+
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.link-underline:hover {
+  background-size: 100% 1px;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent-moss);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.photo-frame {
+  position: relative;
+  overflow: hidden;
+}
+.photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20,19,15,0.08) 0%, rgba(20,19,15,0.42) 100%);
+}
