@@ -1,1 +1,1 @@
-
+headshot.jpg is the nav avatar. photos/ contains the personal photography used as backgrounds throughout the site (hero, case study thumbnails, closing CTA). Swap any file to change the imagery — keep filenames the same or update the references in the matching component.
